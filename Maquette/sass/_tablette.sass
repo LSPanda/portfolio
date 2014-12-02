@@ -1,0 +1,46 @@
+@media screen and (min-width: 39.4375em) and (max-width: 67.5em) //631px
+
+	//Style de mon header sur tablette
+	.headerWidth
+		width: 90%
+		span
+			display: none
+
+	//Style de mon content sur tablette
+	.contentWidth
+		width: 35.4375em
+	figure
+		border-color: $firstBackground
+		+grayScale( 0 )
+		figcaption
+			bottom: -1em
+			color: $footerColor
+			background: $firstBackground
+			background: $firstBackgroundWithOpa
+			padding-bottom: 2.5em
+	.galleryWork
+		float: none
+		width: 100%
+		margin-left: 0
+		img
+			width: 97%
+			&:last-child
+				margin-bottom: 2em
+	.presentationWork
+		float: none
+		width: 100%
+	.articles
+		width: 100%
+	.littleThings
+		display: none
+
+	//Style de mon footer sur tablette
+	.footerWidth
+		width: 90%
+	.foot
+		float: none
+		width: 100%
+		margin: 0
+		padding-top: 2em
+		&:last-child
+			padding-bottom: 2em

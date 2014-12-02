@@ -1,0 +1,80 @@
+@media screen and (max-width: 39.375em)
+	//Style de mon header sur smartphone
+	.headerWidth
+		width: 90%
+		position: relative
+		h1
+			display: block
+			width: 100%
+			margin: 0.25em 0 0 0
+			padding: 0
+			text-align: center
+			a
+				margin: -5em 1em 0
+				padding: 5em 1em 0
+		span
+			display: none
+		&:before
+			float: none
+			margin: 0 auto
+	nav
+		width: 100%
+		text-align: center
+		margin: 0
+		padding: 0
+		ul
+			margin-top: 1em
+
+	//Style de mon content sur smartphone
+	.contentWidth
+		width: 15.5em
+	.works
+		margin: 1.5em 0
+		&:first-child
+			margin: 0
+	blockquote
+		padding: 2em 0
+	.quote
+		margin-left: -0.25em
+	figure 
+		border-color: $firstBackground
+		+grayScale( 0	 )
+		figcaption
+			bottom: -1em
+			color: $footerColor
+			background: $firstBackground
+			background: $firstBackgroundWithOpa
+			padding-bottom: 2.5em
+	.galleryWork
+		float: none
+		width: 100%
+		margin-left: 0
+		img
+			width: 93%
+			margin: 0.5em 0
+			&:last-child
+				margin-bottom: 2em
+	.presentationWork
+		float: none
+		width: 100%
+	.articles
+		width: 100%
+	.date
+		display: none
+	.contenu
+		width: 100%
+		float: left
+	.littleThings
+		display: none
+
+	//Style de mon footer sur smartphone
+	.footerWidth
+		width: 90%
+		margin: 0 auto
+	.foot
+		float: none
+		width: 100%
+		margin: 0
+		padding-top: 2em
+		&:last-child
+			padding-bottom: 2em

@@ -1,0 +1,396 @@
+@import wordpress
+@import main
+@import normalize
+
+@import rules
+@import colors
+@import mixins
+
+//Element général
+html
+	font: 16px/1.5 $toilFont
+	background: url($pathNoise)
+//Definition de la taille de mon titre
+h2
+	+headFontStyle( 1.35em )
+	color: $headerLink
+	margin: 0
+
+//Titre pour élément sectionnant.
+h4
+	+getOffMyPage()
+a
+	color: $firstColor
+	+transition( all, 0.25s )
+	&:hover
+		color: $secondColor
+
+//Header de mon site
+header
+	+headFontStyle( inherit )
+	background-color: $headerFooterBackgound
+.headerWidth
+	width: 70%
+	margin: 0 auto
+	margin-top: -0.75em
+	h1
+		display: inline
+		float: left
+		font-size: 1.35em
+		margin-top: 1.5em
+		padding-left: 0.5em
+		a
+			color: $secondColor
+			margin: -1.5em 0 -1.5em -5em
+			padding: 1.5em 0 1.5em 5em
+		span
+			color: $firstColor
+			font-style: normal
+			padding-left: 0.5em
+	a
+		color: $headerLink
+		text-decoration: none
+		+transition( all, 0.25s )
+		&:hover
+			color: $headerLinkHover
+	&:before
+		content: ""
+		display: block
+		float: left
+		width: 5em
+		height: 5em
+		background: url($pathSprite) -10px -10px $secondColor
+		margin-bottom: -0.75em
+		border: 0.5em solid $firstColor
+		+border-radius( 3.125em )
+	&:after
+		+clearFloat()
+nav
+	float: right
+	font-size: 1.35em
+	margin-top: 0.5em
+	ul
+		padding: 0
+	li
+		display: inline
+		padding-left: 0.5em
+		&:first-child
+			padding-left: 0
+
+//Contenu de mon site
+.contentWidth
+	width: 56.25em
+	margin: 2.5em auto
+	&:after
+		+clearFloat()
+blockquote
+	color: $blockquoteFont
+	font: italic 1.15em $quoteFont
+	margin: 0 auto
+	padding: 2em 1.5em
+	em
+		font-weight: bold
+.quote
+	color: $quoteFont
+	font: italic 4.5em $quoteFont
+	float: left
+	margin-top: -0.75em
+	padding: 0
+.works
+	display: inline-block
+	float: left
+	margin: 1em 2.85%
+	overflow: hidden
+figure
+	display: block
+	position: relative
+	width: 14em
+	height: 14em
+	margin: 0
+	padding: 0
+	border: 0.75em solid $borderLightGrey
+	overflow: hidden
+	+grayScale( 100% )
+	+border-radius( 12.5em )
+	+transition( all, 0.25s )
+	img
+		width: 100%
+		height: 100%
+	figcaption
+		display: block
+		position: absolute
+		height: 2.6em
+		left: 0 
+		right: 0
+		bottom: -8em
+		margin: 0
+		padding: 0.625em 
+		color: $footerColor
+		+headFontStyle( 1.25em )
+		text-align: center
+		+transition( all, 0.75s )
+		span
+			display: block
+			font: 0.85em $toilFont
+			text-transform: capitalize
+	&:hover figcaption
+		color: $footerColor
+		bottom: -1em
+		padding-bottom: 2.5em
+		background: $firstBackground
+		background: $firstBackgroundWithOpa
+	&:last-child
+		margin-left: 0
+	&:hover
+		+grayScale( 0 )
+		border: 0.75em solid $borderBoldGrey
+		+border-radius( 12.5em )
+.galleryWork
+	width: 50%
+	float: left
+	margin-left: 5%
+	img
+		width: 90%
+		margin: 0.75em 0
+		border: 0.5em solid $borderLittleBold
+		&:first-child
+			margin-top: 0
+.presentationWork
+	width: 40%
+	float: right
+	margin-right: 5%
+	span
+		margin: 0
+		font-style: italic
+	.visit
+		display: inline-block
+		padding: 0.5em 0.75em
+		color: $footerColor
+		+headFontStyle( 1.05em )
+		background-color: $firstColor
+		text-decoration: none
+		+border-radius( 0.5em )
+		+transition( all, 0.25s )
+		&:hover
+			background-color: $secondColor
+.pagination
+	margin: 1em 0
+	text-align: center
+	ul
+		padding: 0
+	li
+		display: inline-block
+	a
+		color: $footerColor
+		text-decoration: none
+		padding: 0.5em 0.75em
+		background-color: $headerLink
+		+border-radius( 2em )
+		+transition( all, 0.25s )
+		&:hover
+			background-color: $quoteFont
+	.current
+		background-color: $secondColor
+	&:before
+		+clearFloat()
+.articles
+	display: block
+	width: 60%
+	float: left
+	article
+		margin-top: 1.5em
+		&:after
+			+clearFloat()
+		&:first-child
+			margin-top: 0
+.titre
+	width: 12.5%
+	float: left
+.date	
+	display: block
+	float: left
+	width: 3.75em
+	height: 3.75em
+	+border-radius( 3.125em )
+	border: 0.5em solid $quoteFont
+	background-color: $white
+	p
+		margin: 0
+		padding: 1em 0 0
+		+headFontStyle( inherit )
+		text-align: center
+		color: $headerLink
+		span
+			display: block
+.contenu
+	width: 82.5%
+	float: right
+	a
+		text-decoration: none
+		color: $headerLink
+		&:hover
+			color: $firstColor
+	img
+		width: 96%
+		height: 96%
+		border: 0.5em solid $quoteFont
+	p
+		margin: 0
+		padding: 0 0 1em 0
+.taxo ul
+	padding: 0 0 1.75em 0
+	margin: 0
+	li
+		display: block
+		float: left
+		a
+			color: $firstColor
+			text-decoration: underline
+			+transition( all, 0.25s )
+			&:hover
+				color: $secondColor
+		&:before
+			content: ", "
+		&:first-child:before
+			content: ""
+	&:after
+		+clearFloat()
+.littleThings
+	display: block
+	width: 35%
+	float: right
+	margin-left: 5%
+	img
+		float: left
+		width: 5em
+		+border-radius( 4em )
+		border: 0.5em solid $quoteFont
+		margin-right: 1em
+	p
+		+headFontStyle( 1.30em )
+		margin-top: 0.85em
+		color: $blockquoteFont
+		span
+			display: block
+			font-size: 1.15em
+			margin-top: -0.25em
+			color: $firstColor
+.lastArticles
+	margin-top: 2.5em
+	border-top: 0.0625em solid $quoteFont
+	h2
+		margin-top: 1em
+	ul
+		padding: 0
+		margin: 0.5em 0 0 2em
+	li
+		padding-bottom: 0.5em
+.lastBooks
+	margin-top: 1.5em
+	h2
+		margin-top: 1em
+	ul
+		padding: 0
+		margin: 0.5em 0 0 2em
+	li
+		padding-bottom: 0.5em
+.auteur
+	display: block
+	padding: 0
+	margin: 0 0 1.75em 0
+	color: $headerLink
+	a
+		color: $firstColor
+		text-decoration: underline
+		font-style: italic
+		+transition( all, 0.25s )
+		&:hover
+			color: $secondColor
+.construct
+	display: block
+	width: 300px
+	text-align: center
+	margin: 0 auto
+
+			
+
+//Footer de mon site		
+footer
+	background-color: $headerFooterBackgound
+	color: $footerColor
+	h3
+		+headFontStyle( 1.35em )
+		color: $firstColor
+.footerWidth
+	width: 70%
+	margin: 0 auto
+	&:after
+		+clearFloat()
+.foot
+	width: 30%
+	float: left
+fieldset
+	margin: 0
+	padding: 0
+	border: none
+label
+	display: block
+	padding: 0.75em 0 0.25em
+	&:first-child
+		padding-top: 0
+input, textarea
+	resize: none
+	box-sizing: border-box
+	width: 100%
+	background: $formBackground
+	color: $footerColorInput
+	padding: 0.5em 0.5em
+	border: none
+	+border-radius( 0.3125em )
+	&:focus
+		background: $formBackgroundHover
+#submit
+	width: auto
+	margin: 1em 0
+	padding: 0.5em 1em
+	color: $footerColor
+	background: $firstColor
+	+transition( all, 0.25s )
+	&:hover
+		background: $secondColor
+		color: $headerLink
+.contactMe
+	margin: 0 5%
+.socialMe
+	ul
+		padding: 0
+		margin: 0 0 0 -0.5em
+	li 
+		display: inline-block
+	a
+		display: inline-block
+		width: 3.125em
+		height: 3.125em
+		+border-radius( 1.875em )
+		+transition( all, 0.25s)
+
+//Social Icons			
+.li
+	background: url($pathSprite) -5px -100px
+	&:hover
+		background: url($pathSprite) -5px -150px
+.t
+	background: url($pathSprite) -55px -100px
+	&:hover
+		background: url($pathSprite) -55px -150px
+.f
+	background: url($pathSprite) -105px -100px
+	&:hover
+		background: url($pathSprite) -105px -150px
+.g
+	background: url($pathSprite) -155px -100px
+	&:hover
+		background: url($pathSprite) -155px -150px
+
+@import tablette
+@import smartphone
