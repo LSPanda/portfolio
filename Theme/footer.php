@@ -3,10 +3,10 @@
 				<section class="aboutMe foot">
 					<h3>J'ai une vie en dehors du web&nbsp;?!</h3>
 					<p>Jeune infographiste bercé dans le web, me voilà à la finalité de mes études et prêt à m'engager dans la vie active&nbsp;! Je tente à travers mes travaux de trouver l'équilibre entre beauté et accessibilité, à vous d'en juger.</p>
-					<p>J'ai bien sur d'autre passion d'en la vie. Un homme d'action derrière les fourneaux et un spectateur assidu devant le petit et grand écran pour n'en citer que deux.</p>
+					<p>J'ai bien sûr d'autre passion dans la vie. Un homme d'action derrière les fourneaux et un spectateur assidu devant le petit et grand écran pour n'en citer que deux.</p>
 				</section>
 				<section id="contact" class="contactMe foot">
-					<h3>J'aime bien lire des mails, Envoyer&nbsp;!</h3>
+					<h3>J'aime bien lire des mails, Envoyez-en&nbsp;!</h3>
 					<form method="post" action="#contact">
 						<fieldset>
 							<label for="nom">Votre nom&nbsp;:</label>
