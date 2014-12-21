@@ -120,11 +120,11 @@ figure
 		display: block
 		position: absolute
 		height: 2.6em
-		left: 0 
+		left: 0
 		right: 0
 		bottom: -8em
 		margin: 0
-		padding: 0.625em 
+		padding: 0.625em
 		color: $footerColor
 		+headFontStyle( 1.25em )
 		text-align: center
@@ -206,7 +206,7 @@ figure
 .titre
 	width: 12.5%
 	float: left
-.date	
+.date
 	display: block
 	float: left
 	width: 3.75em
@@ -222,7 +222,7 @@ figure
 		color: $headerLink
 		span
 			display: block
-.contenu
+.content
 	width: 82.5%
 	float: right
 	a
@@ -237,6 +237,17 @@ figure
 	p
 		margin: 0
 		padding: 0 0 1em 0
+.linkBlog
+	text-decoration: underline
+	color: $headerLink
+	&:hover
+		color: $firstColor
+pre
+	width: 100%
+	color: $white
+	background-color: $firstBackground
+	padding: 1em 1.5em
+
 .taxo ul
 	padding: 0 0 1.75em 0
 	margin: 0
@@ -312,9 +323,9 @@ figure
 	text-align: center
 	margin: 0 auto
 
-			
 
-//Footer de mon site		
+
+//Footer de mon site
 footer
 	background-color: $headerFooterBackgound
 	color: $footerColor
@@ -365,7 +376,7 @@ input, textarea
 	ul
 		padding: 0
 		margin: 0 0 0 -0.5em
-	li 
+	li
 		display: inline-block
 	a
 		display: inline-block
@@ -374,7 +385,7 @@ input, textarea
 		+border-radius( 1.875em )
 		+transition( all, 0.25s)
 
-//Social Icons			
+//Social Icons
 .li
 	background: url($pathSprite) -5px -100px
 	&:hover
