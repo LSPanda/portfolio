@@ -10,7 +10,6 @@
 						if ($the_query->have_posts()):
 							while (have_posts()) : the_post();
 					?>
-					<h4><?php echo( the_title() ); ?></h4>
 					<div class="galleryWork">
 					<?php $tableauChamps=array('creation1','creation2','creation3','creation4'); ?>
 					<?php for ($i=0; $i < count($tableauChamps) ; $i++): ?> 
@@ -20,7 +19,7 @@
 					<?php endfor ?>
 					</div>
 					<div class="presentationWork">
-						<h2><?php echo( the_title() ); ?></h2>
+						<h2 class="beta"><?php echo( the_title() ); ?></h2>
 						<span><?php the_terms(get_the_id(),'outils'); ?></span>
 						<?php echo( the_content() ); ?>
 					<?php if (get_field( "url" )): ?>

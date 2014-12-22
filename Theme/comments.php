@@ -21,7 +21,7 @@ if ( post_password_required() ) { ?>
  
 // Display Comments Section
 if ( have_comments() ) : ?>
-    <h3 id="comments"><?php comments_number('Personne n\'écrit de truc ici.', 'Quelqu\'un à écrit un truc ici&nbsp;!', 'Oh&nbsp;? Il y a des trucs écrit ici&nbsp;!');?></h3>
+    <p class="beta" id="comments"><?php comments_number('Personne n\'écrit de truc ici.', 'Quelqu\'un à écrit un truc ici&nbsp;!', 'Oh&nbsp;? Il y a des trucs écrit ici&nbsp;!');?></p>
         <div class="navigation">
             <div class="alignleft"><?php previous_comments_link() ?></div>
             <div class="alignright"><?php next_comments_link() ?></div>

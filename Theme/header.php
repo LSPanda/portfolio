@@ -20,14 +20,15 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-		<header>
-			<div class="headerWidth">
-				<h1><a href="http://portfolio.simon-leyder.be/">Simon Leyder<span> Un gars du web&nbsp;!</span></a></h1>
-                <h4>Menu de Navigation du portfolio de Simon Leyder</h4>
-				<?php 
+        <header>
+            <div class="headerWidth">
+                <h1><a href="http://portfolio.simon-leyder.be/">Simon Leyder<span> Un gars du web&nbsp;!</span></a></h1>
+                <h2 class="hiddenTitle">Menu de Navigation</h2>
+                <?php 
                     $myArgsMenu = array(
                         'theme_location'  => 'top',
-                        'container'       => 'nav',
+                        'container'       => 'div',
+                        'container_class' => 'nav',
                         'echo'            => true,
                         'fallback_cb'     => 'wp_page_menu',
                         'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
@@ -36,5 +37,5 @@
 
                     wp_nav_menu( $myArgsMenu );
                 ?>
-			</div>
-		</header>
+            </div>
+        </header>

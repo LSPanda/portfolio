@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 		<section>
 			<div class="contentWidth">
-				<h4>Liste des travaux réalisés par Simon Leyder</h4>
+				<h2 class="hiddenTitle">Liste des travaux réalisés par Simon Leyder</h2>
 				<div class="smartWidth">
 					<?php 
 						$args = array(
@@ -17,6 +17,7 @@
 							while ($the_query->have_posts()):$the_query->the_post();
 					?>
 					<div class="works">
+						<h3 class="hiddenTitle"><?php echo( the_title() ); ?></h3>
 						<a href="<?php the_permalink(); ?>">
 							<figure>
 								<?php 

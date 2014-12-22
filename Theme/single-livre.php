@@ -2,12 +2,13 @@
 		<section>
 			<div class="contentWidth">
 				<div class="littleThings">
+					<h3 class="hiddenTitle">Les dernières nouveautés sur le Blog</h3>
 					<div class="wrap">
 						<img src="http://portfolio.simon-leyder.be/wp-content/themes/portfolio/images/me.jpg" alt="Une photo de Simon Leyder">
 						<p>Dans la tête de <span>Simon Leyder</span></p>
 					</div>
 					<div class="lastArticles">
-						<h2>Derniers articles</h2>
+						<h4 class="beta">Derniers articles</h4>
 						<ul>
 							<?php 
 								$args = array(
@@ -38,7 +39,7 @@
 							while ($the_query->have_posts()):$the_query->the_post();
 					?>
 					<div class="lastBooks">
-						<h2>Saine lecture</h2>
+						<h4 class="beta">Saine lecture</h4>
 						<ul>
 							<li><a href="<?php the_permalink(); ?>"><?php echo( the_title() ); ?></a></li>
 						</ul>
@@ -58,14 +59,14 @@
 					if ($the_query->have_posts()):
 						while (have_posts()) : the_post();
 				?>
-				<h4><?php echo( the_title() ); ?></h4>
 				<div class="articles">
+					<h3 class="hiddenTitle">Avis de Simon Leyder sur un livre du Web</h3>
 					<article>
 						<div class="date">
 							<div><p><?php echo( the_date( 'j M', '<span>', '</span>') ); ?></p></div>
 						</div>
 						<div class="content">
-							<h2><?php echo( the_title() ); ?></h2>
+							<h4 class="beta"><?php echo( the_title() ); ?></h4>
 							<span class="auteur">De <a href="<?php echo( get_field( "auteur_url" ) ); ?>"><?php echo( get_field( "auteur" ) ); ?></a>, édité par <a href="<?php echo( get_field( "editeur_url" ) ); ?>"><?php echo( get_field( "editeur" ) ); ?></a></span>
 							<?php 
 								if ( has_post_thumbnail() ) {

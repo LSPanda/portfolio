@@ -1,14 +1,15 @@
 <?php get_header(); ?>
 		<section>
 			<div class="contentWidth">
-				<h4>Les des articles postés sur le blog de Simon Leyder</h4>
-				<div class="littleThings">	
+				<h2 class="hiddenTitle">Catégorie spécifique du blog de Simon Leyder</h2>
+				<div class="littleThings">
+					<h3 class="hiddenTitle">Les dernières nouveautés sur le Blog</h3>	
 					<div class="wrap">
 						<img src="http://portfolio.simon-leyder.be/wp-content/themes/portfolio/images/me.jpg" alt="Une photo de Simon Leyder">
 						<p>Dans la tête de <span>Simon Leyder</span></p>
 					</div>
 					<div class="lastArticles">
-						<h2>Derniers articles</h2>
+						<h4 class="beta">Derniers articles</h4>
 						<ul>
 							<?php 
 								$args = array(
@@ -39,7 +40,7 @@
 							while ($the_query->have_posts()):$the_query->the_post();
 					?>
 					<div class="lastBooks">
-						<h2>Saine lecture</h2>
+						<h4 class="beta">Saine lecture</h4>
 						<ul>
 							<li><a href="<?php the_permalink(); ?>"><?php echo( the_title() ); ?></a></li>
 						</ul>
@@ -58,7 +59,7 @@
 							<div><p><?php echo( the_date( 'j M', '<span>', '</span>') ); ?></p></div>
 						</div>
 						<div class="content">
-							<h2><a href="<?php the_permalink(); ?>"><?php echo( the_title() ); ?></a></h2>
+							<h4 class="beta"><a id="myTitleBlogGrey"href="<?php the_permalink(); ?>"><?php echo( the_title() ); ?></a></h4>
 							<div class="taxo"><?php the_category(); ?></div>
 							<?php echo( the_excerpt() ); ?>
 						</div>
