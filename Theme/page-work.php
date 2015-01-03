@@ -1,7 +1,7 @@
 <?php get_header(); ?>
-		<section>
+		<section itemscope itemtype="http://schema.org/CreativeWork">
 			<div class="contentWidth">
-				<h2 class="hiddenTitle">Liste des travaux réalisés par Simon Leyder</h2>
+				<h2 class="hiddenTitle" itemprop="alternativeHeadline">Liste des travaux réalisés par Simon Leyder</h2>
 				<div class="smartWidth">
 					<?php 
 						$args = array(
@@ -16,18 +16,17 @@
 						if ($the_query->have_posts()):
 							while ($the_query->have_posts()):$the_query->the_post();
 					?>
-					<div class="works">
-						<h3 class="hiddenTitle"><?php echo( the_title() ); ?></h3>
-						<a href="<?php the_permalink(); ?>">
-							<figure>
+					<div class="works" itemscope itemtype="http://schema.org/MediaObject">
+						<h3 class="hiddenTitle" itemprop="alternativeHeadline"><?php echo( the_title() ); ?></h3>
+						<a itemprop="url" href="<?php the_permalink(); ?>">
+							<figure itemprop="img">
 								<?php 
 									if ( has_post_thumbnail() ) {
 										the_post_thumbnail();
 									} 
 								?>
-								<p><?php echo( the_content() ); ?></p>
 								<?php $type = wp_get_post_terms( get_the_ID(), 'type' ); ?>
-								<figcaption><?php echo( the_title() ); ?><span><?php echo( $type[0]->name ); ?></span></figcaption>
+								<figcaption itemprop="description"><?php echo( the_title() ); ?><span itemprop="name"><?php echo( $type[0]->name ); ?></span></figcaption>
 							</figure>
 						</a>
 					</div>

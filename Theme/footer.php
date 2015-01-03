@@ -1,27 +1,27 @@
-<footer>
+<footer itemscope itemtype="http://schema.org/WPFooter">
     <div class="footerWidth">
-        <section class="aboutMe foot">
-            <h2 class="gamma">J'ai une vie en dehors du web&nbsp;?!</h2>
-            <p>Jeune infographiste bercé dans le web, me voilà à la finalité de mes études et prêt à m'engager dans la vie active&nbsp;! Je tente à travers mes travaux de trouver l'équilibre entre beauté et accessibilité, à vous d'en juger.</p>
-            <p>J'ai bien sûr d'autre passion dans la vie. Un homme d'action derrière les fourneaux et un spectateur assidu devant le petit et grand écran pour n'en citer que deux.</p>
+        <section class="aboutMe foot" itemprop="about">
+            <h2 class="gamma" itemprop="headline">J'ai une vie en dehors du web&nbsp;?!</h2>
+            <p itemprop="text">Jeune infographiste bercé dans le web, me voilà à la finalité de mes études et prêt à m'engager dans la vie active&nbsp;! Je tente à travers mes travaux de trouver l'équilibre entre beauté et accessibilité, à vous d'en juger.</p>
+            <p itemprop="text">J'ai bien sûr d'autre passion dans la vie. Un homme d'action derrière les fourneaux et un spectateur assidu devant le petit et grand écran pour n'en citer que deux.</p>
         </section>
-        <section id="contact" class="contactMe foot">
-            <h2 class="gamma">J'aime bien lire des mails, Envoyez-en&nbsp;!</h2>
+        <section id="contact" class="contactMe foot" itemprop="potentialAction" itemscope itemtype="EmailMessage">
+            <h2 class="gamma" itemprop="headline">J'aime bien lire des mails, Envoyez-en&nbsp;!</h2>
             <form method="post" action="#contact">
                 <fieldset>
-                    <label for="nom">Votre nom&nbsp;:</label>
+                    <label for="nom" itemprop="author">Votre nom&nbsp;:</label>
                     <input type="text" name="nom" id="nom" required>
-                    <label for="email">Votre mail&nbsp;:</label>
+                    <label for="email" itemprop="url">Votre mail&nbsp;:</label>
                     <input type="email" name="email" id="email" required>
-                    <label for="msg">Votre message&nbsp;:</label>
+                    <label for="msg" itemprop="text">Votre message&nbsp;:</label>
                     <textarea name="msg" id="msg" cols="10" rows="6" required></textarea>
                     <input id="soumission" type="submit" name="envoi" value="Envoyez&nbsp;!">
                 </fieldset>
             </form>
             <?php get_template_part('envoi-contact');?>
         </section>
-        <section class="socialMe foot">
-            <h2 class="gamma">Je suis partout et nulle part&nbsp;!</h2>
+        <section class="socialMe foot" itemprop="url">
+            <h2 class="gamma" itemprop="headline">Je suis partout et nulle part&nbsp;!</h2>
             <ul>
                 <li><a class="li" a href="https://www.linkedin.com/profile/view?id=297405735&trk=nav_responsive_tab_profile"></a></li>
                 <li><a class="t" href="https://twitter.com/SimLeyder"></a></li>

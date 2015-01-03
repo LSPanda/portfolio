@@ -1,14 +1,14 @@
 <?php get_header(); ?>
-		<section>
+		<section itemscope itemtype="http://schema.org/Blog">
 			<div class="contentWidth">
 				<div class="littleThings">
-					<h3 class="hiddenTitle">Les dernières nouveautés sur le Blog</h3>
+					<h3 class="hiddenTitle" itemprop="alternativeHeadline">Les dernières nouveautés sur le Blog</h3>
 					<div class="wrap">
 						<img src="http://portfolio.simon-leyder.be/wp-content/themes/portfolio/images/me.jpg" alt="Une photo de Simon Leyder">
 						<p>Dans la tête de <span>Simon Leyder</span></p>
 					</div>
 					<div class="lastArticles">
-						<h4 class="beta">Derniers articles</h4>
+						<h4 class="beta" itemprop="headline">Derniers articles</h4>
 						<ul>
 							<?php 
 								$args = array(
@@ -20,7 +20,7 @@
 								if ($the_query->have_posts()):
 									while ($the_query->have_posts()):$the_query->the_post();
 							?>
-							<li><a href="<?php the_permalink(); ?>"><?php echo( the_title() ); ?></a></li>
+							<li itemprop="blogPost"><a itemprop="url" href="<?php the_permalink(); ?>"><?php echo( the_title() ); ?></a></li>
 							<?php
 									endwhile;
 								endif;
@@ -39,9 +39,9 @@
 							while ($the_query->have_posts()):$the_query->the_post();
 					?>
 					<div class="lastBooks">
-						<h4 class="beta">Saine lecture</h4>
+						<h4 class="beta" itemprop="headline">Saine lecture</h4>
 						<ul>
-							<li><a href="<?php the_permalink(); ?>"><?php echo( the_title() ); ?></a></li>
+							<li itemprop="blogPost"><a itemprop="url" href="<?php the_permalink(); ?>"><?php echo( the_title() ); ?></a></li>
 						</ul>
 					</div>
 					<?php
@@ -60,14 +60,14 @@
 						while (have_posts()) : the_post();
 				?>
 				<div class="articles">
-					<h3 class="hiddenTitle">Avis de Simon Leyder sur un livre du Web</h3>
-					<article>
-						<div class="date">
+					<h3 class="hiddenTitle" itemprop="alternativeHeadline">Avis de Simon Leyder sur un livre du Web</h3>
+					<article itemscope itemtype="http://schema.org/Book">
+						<div class="date" itemprop="dateCreated">
 							<div><p><?php echo( the_date( 'j M', '<span>', '</span>') ); ?></p></div>
 						</div>
 						<div class="content">
-							<h4 class="beta"><?php echo( the_title() ); ?></h4>
-							<span class="auteur">De <a href="<?php echo( get_field( "auteur_url" ) ); ?>"><?php echo( get_field( "auteur" ) ); ?></a>, édité par <a href="<?php echo( get_field( "editeur_url" ) ); ?>"><?php echo( get_field( "editeur" ) ); ?></a></span>
+							<h4 class="beta" itemprop="headline"><?php echo( the_title() ); ?></h4>
+							<span class="auteur" itemprop="author">De <a href="<?php echo( get_field( "auteur_url" ) ); ?>"><?php echo( get_field( "auteur" ) ); ?></a>, édité par <a  itemprop="editor" href="<?php echo( get_field( "editeur_url" ) ); ?>"><?php echo( get_field( "editeur" ) ); ?></a></span>
 							<?php 
 								if ( has_post_thumbnail() ) {
 									$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );

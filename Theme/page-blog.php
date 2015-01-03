@@ -1,15 +1,15 @@
 <?php get_header(); ?>
-        <section>
+        <section itemscope itemtype="http://schema.org/Blog">
             <div class="contentWidth">
-                <h2 class="hiddenTitle">Blog de Simon Leyder</h2>
-                <div class="littleThings">
-                    <h3 class="hiddenTitle">Les dernières nouveautés sur le Blog</h3>
+                <h2 class="hiddenTitle" itemprop="alternativeHeadline">Blog de Simon Leyder</h2>
+                <div class="littleThings" >
+                    <h3 class="hiddenTitle" itemprop="alternativeHeadline">Les dernières nouveautés sur le Blog</h3>
                     <div class="wrap">
                         <img src="http://portfolio.simon-leyder.be/wp-content/themes/portfolio/images/me.jpg" alt="Une photo de Simon Leyder">
                         <p>Dans la tête de <span>Simon Leyder</span></p>
                     </div>
                     <div class="lastArticles">
-                        <h4 class="beta">Derniers articles</h4>
+                        <h4 class="beta" itemprop="headline">Derniers articles</h4>
                         <ul>
                             <?php 
                                 $args = array(
@@ -21,7 +21,7 @@
                                 if ($the_query->have_posts()):
                                     while ($the_query->have_posts()):$the_query->the_post();
                             ?>
-                            <li><a href="<?php the_permalink(); ?>"><?php echo( the_title() ); ?></a></li>
+                            <li itemprop="blogPost"><a itemprop="url" href="<?php the_permalink(); ?>"><?php echo( the_title() ); ?></a></li>
                             <?php
                                     endwhile;
                                 endif;
@@ -40,9 +40,9 @@
                             while ($the_query->have_posts()):$the_query->the_post();
                     ?>
                     <div class="lastBooks">
-                        <h4 class="beta">Saine lecture</h4>
+                        <h4 class="beta" itemprop="headline">Saine lecture</h4>
                         <ul>
-                            <li><a href="<?php the_permalink(); ?>"><?php echo( the_title() ); ?></a></li>
+                            <li itemprop="blogPost"><a itemprop="url" href="<?php the_permalink(); ?>"><?php echo( the_title() ); ?></a></li>
                         </ul>
                     </div>
                     <?php
@@ -65,12 +65,12 @@
                     ?>
                     <?php if ($the_query->have_posts()): ?>
                             <?php while ($the_query->have_posts()):$the_query->the_post();  ?>
-                    <article>
-                        <div class="date">
+                    <article itemprop="blogPost">
+                        <div class="date" itemprop="dateCreated">
                             <div><p><?php echo( the_date( 'j M', '<span>', '</span>') ); ?></p></div>
                         </div>
-                        <div class="content">
-                            <h4 class="beta"><a id="myTitleBlogGrey" href="<?php the_permalink(); ?>"><?php echo( the_title() ); ?></a></h4>
+                        <div class="content" itemprop="about">
+                            <h4 class="beta" itemprop="headline"><a itemprop="url" id="myTitleBlogGrey" href="<?php the_permalink(); ?>"><?php echo( the_title() ); ?></a></h4>
                             <div class="taxo"><?php the_category(); ?></div>
                             <?php echo( the_excerpt() ); ?>
                         </div>

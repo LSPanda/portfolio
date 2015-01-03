@@ -20,10 +20,10 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <header>
-            <div class="headerWidth">
-                <h1><a href="http://portfolio.simon-leyder.be/">Simon Leyder<span> Un gars du web&nbsp;!</span></a></h1>
-                <h2 class="hiddenTitle">Menu de Navigation</h2>
+        <header itemscope itemtype="http://schema.org/WPHeader">
+            <div class="headerWidth" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                <h1 itemprop="accountablePerson"><a href="http://portfolio.simon-leyder.be/" itemprop="url">Simon Leyder<span itemprop="text"> Un gars du web&nbsp;!</span></a></h1>
+                <h2 class="hiddenTitle" itemprop="alternativeHeadline">Menu de Navigation</h2>
                 <?php 
                     $myArgsMenu = array(
                         'theme_location'  => 'top',
