@@ -2,13 +2,13 @@
 		<section itemscope itemtype="http://schema.org/Blog">
 			<div class="contentWidth">
 				<div class="littleThings">
-					<h3 class="hiddenTitle" itemprop="alternativeHeadline">Les dernières nouveautés sur le Blog</h3>
+					<h2 class="hiddenTitle" itemprop="alternativeHeadline">Les dernières nouveautés sur le Blog</h2>
 					<div class="wrap">
 						<img src="http://portfolio.simon-leyder.be/wp-content/themes/portfolio/images/me.jpg" alt="Une photo de Simon Leyder">
 						<p>Dans la tête de <span>Simon Leyder</span></p>
 					</div>
-					<div class="lastArticles">
-						<h4 class="beta" itemprop="headline">Derniers articles</h4>
+					<section class="lastArticles">
+						<h3 class="beta" itemprop="headline">Derniers articles</h3>
 						<ul>
 							<?php 
 								$args = array(
@@ -27,7 +27,7 @@
 								wp_reset_postdata();
 							?>
 						</ul>
-					</div>
+					</section>
 					<?php 
 						$args = array(
 							'post_type' => 'livre',
@@ -38,12 +38,12 @@
 						if ($the_query->have_posts()):
 							while ($the_query->have_posts()):$the_query->the_post();
 					?>
-					<div class="lastBooks">
-						<h4 class="beta" itemprop="headline">Saine lecture</h4>
+					<section class="lastBooks">
+						<h3 class="beta" itemprop="headline">Saine lecture</h3>
 						<ul>
 							<li itemprop="blogPost"><a itemprop="url" href="<?php the_permalink(); ?>"><?php echo( the_title() ); ?></a></li>
 						</ul>
-					</div>
+					</section>
 					<?php
 							endwhile;
 						endif;
@@ -59,14 +59,14 @@
 					if ($the_query->have_posts()):
 						while (have_posts()) : the_post();
 				?>
-				<div class="articles">
-					<h3 class="hiddenTitle" itemprop="alternativeHeadline">Avis de Simon Leyder sur un livre du Web</h3>
+				<section class="articles">
+					<h2 class="hiddenTitle" itemprop="alternativeHeadline">Avis de Simon Leyder sur un livre du Web</h2>
 					<article itemscope itemtype="http://schema.org/Book">
 						<div class="date" itemprop="dateCreated">
 							<div><p><?php echo( the_date( 'j M', '<span>', '</span>') ); ?></p></div>
 						</div>
 						<div class="content">
-							<h4 class="beta" itemprop="headline"><?php echo( the_title() ); ?></h4>
+							<h3 class="beta" itemprop="headline"><?php echo( the_title() ); ?></h3>
 							<span class="auteur" itemprop="author">De <a href="<?php echo( get_field( "auteur_url" ) ); ?>"><?php echo( get_field( "auteur" ) ); ?></a>, édité par <a  itemprop="editor" href="<?php echo( get_field( "editeur_url" ) ); ?>"><?php echo( get_field( "editeur" ) ); ?></a></span>
 							<?php 
 								if ( has_post_thumbnail() ) {
@@ -79,7 +79,7 @@
 							<?php echo( the_content() ); ?>
 							<div class="share">
 								<ul>
-									<li><a name="fb_share" type="box_count" share_url="<?php echo( the_permalink() ); ?>"></a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script></li>
+									<li><a name="fb_share" href="<?php echo( the_permalink() ); ?>"></a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script></li>
 									<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="InfoWebMaster">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>
 								</ul>
 							</div>	
@@ -88,7 +88,7 @@
 					<div class="comments-template">
 						<?php comments_template(); ?>
 					</div>
-				</div>
+				</section>
 				<?php
 						endwhile;
 					endif;

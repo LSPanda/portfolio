@@ -15,7 +15,7 @@
             if ($the_query->have_posts()):
                 while ($the_query->have_posts()):$the_query->the_post();
                 ?>
-                <div class="works" itemscope itemtype="http://schema.org/MediaObject">
+                <article class="works" itemscope itemtype="http://schema.org/MediaObject">
                     <h3 class="hiddenTitle" itemprop="alternativeHeadline"><?php echo( the_title() ); ?></h3>
                     <a itemprop="url" href="<?php the_permalink(); ?>">
                         <figure itemprop="img">
@@ -28,7 +28,7 @@
                             <figcaption itemprop="description"><?php echo( the_title() ); ?><span itemprop="name"><?php echo( $type[0]->name ); ?></span></figcaption>
                         </figure>
                     </a>
-                </div>
+                </article>
                 <?php
             endwhile;
         endif;

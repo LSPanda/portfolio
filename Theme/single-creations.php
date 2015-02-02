@@ -10,16 +10,16 @@
 						if ($the_query->have_posts()):
 							while (have_posts()) : the_post();
 					?>
-					<div class="galleryWork">
+					<div class="galleryWork" itemscope itemtype="http://schema.org/CreativeWork">
 					<?php $tableauChamps=array('creation1','creation2','creation3','creation4'); ?>
 					<?php for ($i=0; $i < count($tableauChamps) ; $i++): ?> 
 						<?php if ( get_field($tableauChamps[$i]) ): ?>
-							<a href="<?php echo( get_field( $tableauChamps[$i]) ); ?>" class="fresco" data-fresco-group="unique_name"><img src="<?php echo( get_field( $tableauChamps[$i] ) ); ?>" title="<?php echo( the_title() ); ?>" alt="<?php echo( the_title() ); ?>" class="showMe"></a>
+							<a itemprop="url" href="<?php echo( get_field( $tableauChamps[$i]) ); ?>" class="fresco" data-fresco-group="unique_name"><img itemprop="image" src="<?php echo( get_field( $tableauChamps[$i] ) ); ?>" title="<?php echo( the_title() ); ?>" alt="<?php echo( the_title() ); ?>" class="showMe"></a>
 						<?php endif ?>
 					<?php endfor ?>
 					</div>
-					<div class="presentationWork">
-						<h2 class="beta"><?php echo( the_title() ); ?></h2>
+					<div itemprop="about" class="presentationWork">
+						<h2 class="beta" itemprop="headline"><?php echo( the_title() ); ?></h2>
 						<span><?php the_terms(get_the_id(),'outils'); ?></span>
 						<?php echo( the_content() ); ?>
 					<?php if (get_field( "url" )): ?>
@@ -27,7 +27,7 @@
 					<?php endif ?>
 						<div class="share">
 							<ul>
-								<li><a name="fb_share" type="box_count" share_url="<?php echo( the_permalink() ); ?>"></a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script></li>
+								<li><a name="fb_share" href="<?php echo( the_permalink() ); ?>"></a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script></li>
 								<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="InfoWebMaster">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>
 							</ul>
 						</div>					
@@ -38,7 +38,6 @@
 						endif;
 						wp_reset_postdata();
 					?>
-				</div>
 			</div>
 			<div class="smartWidth smartWidthOut"></div>
 

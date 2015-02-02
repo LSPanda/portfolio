@@ -23,19 +23,22 @@
         <header itemscope itemtype="http://schema.org/WPHeader">
             <div class="headerWidth" itemscope itemtype="http://schema.org/SiteNavigationElement">
                 <h1 itemprop="accountablePerson"><a href="http://portfolio.simon-leyder.be/" itemprop="url">Simon Leyder<span itemprop="text"> Un gars du web&nbsp;!</span></a></h1>
-                <h2 class="hiddenTitle" itemprop="alternativeHeadline">Menu de Navigation</h2>
-                <?php 
-                    $myArgsMenu = array(
-                        'theme_location'  => 'top',
-                        'container'       => 'div',
-                        'container_class' => 'nav',
-                        'echo'            => true,
-                        'fallback_cb'     => 'wp_page_menu',
-                        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                        'depth'           => 0
-                    );
+		<nav>                
+			<h2 class="hiddenTitle" itemprop="alternativeHeadline">Menu de Navigation</h2>
+               		<?php 
+                    	    $myArgsMenu = array(
+                        	'theme_location'  => 'top',
+                        	'container'       => 'div',
+                        	'container_class' => 'nav',
+                        	'echo'            => true,
+                        	'fallback_cb'     => 'wp_page_menu',
+                        	'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                        	'depth'           => 0
+                    	    );
 
-                    wp_nav_menu( $myArgsMenu );
-                ?>
+                    	wp_nav_menu( $myArgsMenu );
+		
+                	?>
+		</nav>
             </div>
         </header>
